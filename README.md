@@ -42,5 +42,5 @@ docker build -t repotagger .
 docker run --name [name] -p [PORT]:[PORT] repotagger
 ```
 
-##Linters
+## Linters
 gofmt, goimports, golint
