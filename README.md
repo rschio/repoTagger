@@ -41,3 +41,6 @@ cd $GOPATH/src/github.com/rschio/repoTagger
 docker build -t repotagger .
 docker run --name [name] -p [PORT]:[PORT] repotagger
 ```
+
+##Linters
+gofmt, goimports, golint
