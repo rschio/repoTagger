@@ -1,0 +1,45 @@
+FORMAT: 1A
+HOST: http://myAPI.com
+# API to Tag GitHub Repositories
+
+This is an API to get starred reposirories from GitHub and Tag them.
+
+
+## Store all starred repositories from user [POST /repos/{username}]
++ Parameters
+	+ username: `rschio` (required, string) - The GitHub username.
+
++ Response 201
+
+## Get all repositories information wich starts with tag [GET /search/{tag}]
++ Parameters
+	+ tag: `docker` (string) - The tag name or the tag prefix.
+
++ Response 200 (application/json)
+	+ Attributes (array[Repo])
+
+## Get tag suggestion for repository [GET /suggest/{id}]
++ Parameters
+	+ id: `100` (required, number) - The repository ID.
+
++ Response 200 (application/json)
+	+ Attributes (array[string])
+	
+## Set repository tags [PUT /tag/{id}?tags={tags}]
++ Parameters
+	+ id: 100 (required, number) - The repository ID.
+	+ tags: `docker,hello` (string) - The new tags.
+
+
++ Response 201
+
+# Data Structures
+
+## Repo (object)
+- id: `1` (number) - The ID of the repository.
+- name: `My repo` (string) - The name of the repository.
+- description: `This is a repo` (string) - The description of the repository.
+- html_url: `https://github.com/user/repo` (string) - The url of the repository.
+- language: `Go` (string) - The language of the repository.
+- tags: `tag1`, `tag2` (array[string]) - All the tags of the repository.
+
