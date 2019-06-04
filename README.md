@@ -21,15 +21,18 @@ Install the binary:
 go install github.com/rschio/repoTagger
 ```
 
-Run:
-```bash
-repoTagger
-```
-
+## Test
 Tests:
 ```bash
 cd $GOPATH/src/github.com/rschio/repoTagger
 go test ./...
+```
+
+## Run
+
+Run:
+```bash
+repoTagger
 ```
 
 Run on Docker:
