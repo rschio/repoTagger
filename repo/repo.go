@@ -33,7 +33,7 @@ func (e NotFoundErr) Error() string {
 	return fmt.Sprintf("not found")
 }
 
-// SetTags discard the last tags map and set
+// SetTags discard the last tags slice and set
 // the new one.
 func (r *Repo) SetTags(tags ...string) {
 	r.Tags = make([]string, 0, len(tags))
@@ -134,7 +134,7 @@ func unmarshalRepos(data []byte) ([]*Repo, error) {
 }
 
 func extractRepo(repoCh chan<- []*Repo, limit chan struct{}, url string) {
-	// release space to another go routine can execute.
+	// release space to another go routine execute.
 	defer func() { <-limit }()
 	body, err := getPageBody(url)
 	if err != nil {
